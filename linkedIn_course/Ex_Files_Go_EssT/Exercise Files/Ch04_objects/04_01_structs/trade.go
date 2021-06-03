@@ -31,4 +31,27 @@ func main() {
 
 	t3 := Trade{}
 	fmt.Printf("%+v\n", t3)
+
+	symbol := "HHH"
+	vol := 2
+	p := 22.2
+	buy := false
+	t4 := Trade{symbol, vol, p, buy}
+	fmt.Printf("%+v\n", t4)
+
+	symbol1 := "HHHLLL"
+	vol1 := 10
+	p1 := 23.2
+	buy1 := false
+	t5 := &Trade{symbol1, vol1, p1, buy1}
+	fmt.Printf("%+v\n", t5)
+
+	t6 := &Trade{
+		Symbol: symbol,
+		Volume: 1033,
+		Price:  91.98,
+		Buy:    true,
+	}
+	fmt.Printf("%+v\n", t6)
+
 }

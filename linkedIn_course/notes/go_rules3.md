@@ -269,6 +269,53 @@ true
 
 #### Using Map function
 
+```go
+// The map function returns a copy of a string with the characters modified
+	// according to the mapping function
+	shift := 2
+	s := "The quick brown fox jumps over the lazy dog"
+
+	// TODO: create the mapping function
+	transform := func(r rune) rune {
+		switch {
+		case r >= 'A' && r <= 'Z':
+			value := int('A') + (int(r) - int('A') + shift)
+			value = calculateValue(value, 91, 65)
+			return rune(value)
+		case r >= 'a' && r <= 'z':
+			value := int('a') + (int(r) - int('a') + shift)
+			value = calculateValue(value, 122, 97)
+			return rune(value)
+		}
+		return r
+	}
+
+	// TODO: Encode the message
+	encode := strings.Map(transform, s)
+	fmt.Println(encode)
+
+	// TODO: Decode the message
+	shift = -shift
+	decode := strings.Map(transform, encode)
+	fmt.Println(decode)
+}
+
+func calculateValue(value, asciUpper, asciLower int) int {
+	if value > asciUpper { // 91 is the limit of upper cases
+		value -= 26
+	} else if value < asciLower {
+		value += 26
+	}
+	return value
+}
+```
+
+```bash
+#output
+Vjg swkem dtqyp hqz lworu qxgt vjg ncba fqi
+The quick brown fox jumps over the lazy dog
+```
+
 #### Using string builder
 
 ```go
@@ -323,7 +370,165 @@ Builder size is 0
 
 #### Parsing a string with strconv
 
+```go
+ampleint := 100
+	samplestr := "250"
+
+	// This does a character conversion, not a numerical one
+	fmt.Println("\n// This does a character conversion, not a numerical one")
+	newstr := string(sampleint)
+	fmt.Println("Int is: :", sampleint)
+	fmt.Println("Result of using string():", newstr)
+
+	// The strconv package contains a variety of functions for parsing and formatting
+	// numbers, values, and strings
+	fmt.Println("\n// The strconv package contains a variety of functions for parsing and formatting")
+	fmt.Println("// numbers, values, and strings")
+
+	// Convert an integer to string
+	fmt.Println("\n// Convert an integer to string")
+	s := strconv.Itoa(sampleint)
+	fmt.Printf("%T, %v\n", s, s)
+
+	// Convert a string to integer
+	fmt.Println("\n// Convert a string to integer")
+	x, err := strconv.Atoi(samplestr)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Printf("%T, %v\n", x, x)
+
+	// Other parse functions
+	fmt.Println("\n// Other parse functions")
+	b, _ := strconv.ParseBool("true")
+	fmt.Println("strconv.ParseBool(\"true\")", b)
+	f, _ := strconv.ParseFloat("3.14159", 64)
+	fmt.Println("strconv.ParseFloat(\"3.14159\", 64)", f)
+	i, _ := strconv.ParseInt("-42", 10, 64)
+	fmt.Println("strconv.ParseInt(\"-42\", 10, 64)", i)
+	u, _ := strconv.ParseUint("42", 10, 64)
+	fmt.Println("strconv.ParseUint(\"42\", 10, 64)", u)
+
+	// Other format functions
+	fmt.Println("\n// Other format functions")
+	s = strconv.FormatBool(true)
+	fmt.Println("strconv.FormatBool(true)", s)
+	s = strconv.FormatFloat(3.14159, 'E', -1, 64)
+	fmt.Println("strconv.FormatFloat(3.14159, 'E', -1, 64)", s)
+	s = strconv.FormatInt(-42, 10)
+	fmt.Println("strconv.FormatInt(-42, 10)", s)
+	s = strconv.FormatUint(42, 10)
+	fmt.Println("strconv.FormatUint(42, 10)", s)
+```
+
+```bash
+# output
+// This does a character conversion, not a numerical one
+Int is: : 100
+Result of using string(): d
+
+// The strconv package contains a variety of functions for parsing and formatting
+// numbers, values, and strings
+
+// Convert an integer to string
+string, 100
+
+// Convert a string to integer
+int, 250
+
+// Other parse functions
+strconv.ParseBool("true") true
+strconv.ParseFloat("3.14159", 64) 3.14159
+strconv.ParseInt("-42", 10, 64) -42
+strconv.ParseUint("42", 10, 64) 42
+
+// Other format functions
+strconv.FormatBool(true) true
+strconv.FormatFloat(3.14159, 'E', -1, 64) 3.14159E+00
+strconv.FormatInt(-42, 10) -42
+strconv.FormatUint(42, 10) 42
+```
+
 #### String tests with Unicode
+
+```go
+// Declare a sample string
+	fmt.Println("// Declare a sample string")
+	const s = "The 'quick' brown fox, jumped over the *LAZY* dog!"
+	fmt.Println("Constant s:", s)
+
+	// Init some count variables
+	t := `// Init some count variables
+	punctCount := 0
+	lowerCount, upperCount := 0, 0
+	spaceCount := 0
+	hexdigitCount := 0`
+	fmt.Println("\n", t)
+	punctCount := 0
+	lowerCount, upperCount := 0, 0
+	spaceCount := 0
+	hexdigitCount := 0
+
+	// iterate over the characters and call unicode function tests
+	fmt.Println("\n", "// iterate over the characters and call unicode function tests")
+	for _, ch := range s {
+		if unicode.IsPunct(ch) {
+			punctCount++
+		}
+		if unicode.IsLower(ch) {
+			lowerCount++
+		}
+		if unicode.IsUpper(ch) {
+			upperCount++
+		}
+		if unicode.IsSpace(ch) {
+			spaceCount++
+		}
+		if unicode.Is(unicode.Hex_Digit, ch) {
+			hexdigitCount++
+		}
+	}
+
+	t = `// Print the results
+	fmt.Println("Punctuation:", punctCount)
+	fmt.Println("Lowercase:", lowerCount)
+	fmt.Println("Uppercase:", upperCount)
+	fmt.Println("Whitespace:", spaceCount)
+	fmt.Println("Hex Digits:", hexdigitCount)`
+	// Print the results
+	fmt.Println("\n", t)
+	fmt.Println("Punctuation:", punctCount)
+	fmt.Println("Lowercase:", lowerCount)
+	fmt.Println("Uppercase:", upperCount)
+	fmt.Println("Whitespace:", spaceCount)
+	fmt.Println("Hex Digits:", hexdigitCount)
+  ```
+
+  ```bash
+  # output
+  // Declare a sample string
+  Constant s: The 'quick' brown fox, jumped over the *LAZY* dog!
+
+  // Init some count variables
+	punctCount := 0
+	lowerCount, upperCount := 0, 0
+	spaceCount := 0
+	hexdigitCount := 0
+
+  // iterate over the characters and call unicode function tests
+
+  // Print the results
+	fmt.Println("Punctuation:", punctCount)
+	fmt.Println("Lowercase:", lowerCount)
+	fmt.Println("Uppercase:", upperCount)
+	fmt.Println("Whitespace:", spaceCount)
+	fmt.Println("Hex Digits:", hexdigitCount)
+Punctuation: 6
+Lowercase: 31
+Uppercase: 5
+Whitespace: 8
+Hex Digits: 10
+```
 
 ### Mathematical Operations
 
