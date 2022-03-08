@@ -11,6 +11,10 @@ import (
 	"sort"
 )
 
+/*
+Using the code of findIPv4.go, write a Go program that prints the most popular IPv4 addresses found in a log
+file without processing the output with any UNIX utilities.
+*/
 func main() {
 	args := os.Args
 	if len(args) < 2 {
