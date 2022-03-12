@@ -22,7 +22,7 @@ x.x.x.90 - - [13/Sep/2006:07:00:53 -0700] "PROPFIND /svn/[xxxx]/[xxxx]/2.5 HTTP/
 x.x.x.90 - - [13/Sep/2006:07:00:53 -0700] "PROPFIND /svn/[xxxx]/Extranet/branches/SOW-101 HTTP/1.1" 401 587
 x.x.x.90 - - [13/Sep/2006:07:00:21 -0700] "PROPFIND /svn/[xxxx]/[xxxx]/trunk HTTP/1.1" 401 587
 x.x.x.90 - - [13/Sep/2006:06:59:53 -0700] "PROPFIND /svn/[xxxx]/[xxxx]/2.5 HTTP/1.1" 401 587
-x.x.x.90 - - [13/Sep/2006:06:59:50 -0700] "PROPFIND /svn/[xxxx]/[xxxx]/trunk HTTP/1.1" 401 587
+x.x.x.90 - - [13/Sep/2006:06:59:50 -0700] "PROPFIND /svn/[xxxx]/[xxxx]/trunk HTTP/1.1" 404 587
 x.x.x.90 - - [13/Sep/2006:06:58:52 -0700] "PROPFIND /svn/[xxxx]/[xxxx]/trunk HTTP/1.1" 401 587
 x.x.x.90 - - [13/Sep/2006:06:58:52 -0700] "PROPFIND /svn/[xxxx]/Extranet/branches/SOW-101 HTTP/1.1" 401 587
 [Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
@@ -46,9 +46,9 @@ x.x.x.90 - - [13/Sep/2006:06:58:52 -0700] "PROPFIND /svn/[xxxx]/Extranet/branche
 100.100.100.100 - - 
 100.100.100.100.300 - - 
 123.234.5.100 - - Last entry
-- - [21/Nov/2017:19:28:09 +0200] "GET /AMEv2.tif.zip HTTP/1.1" 200 2188249 "-" 
-- - [21/Jun/2017:19:28:09 +0200] "GET /AMEv2.tif.zip HTTP/1.1" 200
-- - [25/Lun/2017:20:05:34 +0200] "GET /MongoDjango.zip HTTP/1.1" 200 118362
-- - [Jun-21-17:19:28:09 +0200] "GET /AMEv2.tif.zip HTTP/1.1" 200
-- - [20/Nov/2017:20:05:34 +0200] "GET /MongoDjango.zip HTTP/1.1" 200 118362
-- - [35/Nov/2017:20:05:34 +0200] "GET MongoDjango.zip HTTP/1.1" 200 118362
+1.1.1.1 - - [21/Nov/2017:19:28:09 +0200] "GET /AMEv2.tif.zip HTTP/1.1" 200 2188249 "-" 
+2.2.2.2 - - [21/Jun/2017:19:28:09 +0200] "GET /AMEv2.tif.zip HTTP/1.1" 200
+3.3.3.3 - - [25/Lun/2017:20:05:34 +0200] "GET /MongoDjango.zip HTTP/1.1" 200 118362
+4.4.4.4 - - [Jun-21-17:19:28:09 +0200] "GET /AMEv2.tif.zip HTTP/1.1" 200
+5.5.5.5 - - [20/Nov/2017:20:05:34 +0200] "GET /MongoDjango.zip HTTP/1.1" 200 118362
+6.6.6.6 - - [35/Nov/2017:20:05:34 +0200] "GET MongoDjango.zip HTTP/1.1" 200 118362
