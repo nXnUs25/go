@@ -68,16 +68,30 @@ func main() {
 	Pln("Sending same as above but to the file:", file+".Save")
 	SaveToXML(file+".Save", myWorkPlace)
 
+	f, _ := ReadXML2(file)
+	in := xml.NewDecoder(f)
+	in.Decode(&myWorkPlace)
+	Pln("Other method reading file:\n", myWorkPlace.Pretty())
 }
 
 func ReadXML(file string) ([]byte, error) {
 	lf(I+"Reading file [%v] in func() [%v]\n", file, GetFunc())
 	data, err := ioutil.ReadFile(file)
 	if err != nil {
-		lf(I+"Cannot read file [%v] in func() [%v] - err message: %v\n", file, GetFunc(), err)
+		lf(E+"Cannot read file [%v] in func() [%v] - err message: %v\n", file, GetFunc(), err)
 		return nil, err
 	}
 	return data, nil
+}
+
+func ReadXML2(file string) (*os.File, error) {
+	lf(I+"Reading file [%v] in func() [%v]\n", file, GetFunc())
+	f, err := os.Open(file)
+	if err != nil {
+		lf(E+"Cannot read file [%v] in func() [%v] - err message: %v\n", file, GetFunc(), err)
+		return nil, err
+	}
+	return f, nil
 }
 
 func ParseXML(data []byte, structure interface{}) error {
