@@ -37,6 +37,11 @@ var (
 	debug  = true
 )
 
+/*
+	embeded type for rand.Rand
+	which we can use Intn function on thad field
+
+*/
 type myRand struct {
 	*rand.Rand
 	seed int64
