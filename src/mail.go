@@ -114,7 +114,7 @@ type Address struct {
 
 func main() {
 	//ex: SendMail("127.0.0.1:25", (&mail.Address{"from name", "from@example.com"}).String(), "Email Subject", "message body", []string{(&mail.Address{"to name", "to@example.com"}).String()})
-	//to := []string{"chmielua@gmail.com", "augustyn.chmiel@acoustic.com"}
-	//SendMail("mailproxy.atlis1:25", "proxy@bg53-ca-ue1.prod.awspr", "Subject 1", "body text 1", to)
+	//to := []string{"tesa@gmail.com"}
+	//SendMail("proxy.com:25", "proxy@vservre2", "Subject 1", "body text 1", to)
 	SendEmail(25, "mailproxy.atlis1", "testing sink", "test golang 1", "chmielua@gmail.com")
 }
