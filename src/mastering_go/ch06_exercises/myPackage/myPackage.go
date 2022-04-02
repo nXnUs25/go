@@ -13,3 +13,8 @@ func CallPrivate(name string) {
 func Version() {
 	fmt.Println("Version: ", version)
 }
+
+func Print() {
+	fmt.Println("Package Calling print(): ")
+	print()
+}
