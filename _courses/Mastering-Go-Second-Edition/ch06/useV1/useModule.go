@@ -6,5 +6,5 @@ import (
 
 func main() {
 	v1.Version()
+	//v1.Version2("test v1")
 }
-
