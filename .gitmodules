@@ -1,3 +1,6 @@
 [submodule "src/mastering_go/src/mastering_go/ch06_exercises/myGoModule"]
 	path = src/mastering_go/src/mastering_go/ch06_exercises/myGoModule
 	url = https://github.com/nXnUs25/myGoModule.git
+[submodule "src/mastering_go/ch06_exercises/src/mastering_go/ch06_exercises/gopackage"]
+	path = src/mastering_go/ch06_exercises/src/mastering_go/ch06_exercises/gopackage
+	url = https://github.com/nXnUs25/gopackage.git
