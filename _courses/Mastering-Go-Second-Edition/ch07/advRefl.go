@@ -51,14 +51,21 @@ func main() {
 	a1 := a{1, 2.1, "A1"}
 	a2 := a{1, -2, "A2"}
 
+	fmt.Printf("\n>>> Comparing type a1: [%v] with same type a1: [%v]\n", a1, a1)
 	if a1.compareStruct(a1) {
 		fmt.Println("Equal!")
 	}
 
+	fmt.Printf("\n>>> Comparing type a1: [%v] with same type a1: [%v]\n", a1, a2)
 	if !a1.compareStruct(a2) {
 		fmt.Println("Not Equal!")
 	}
 
+	fmt.Println("\n>>> Checking methods for os.File")
 	var f *os.File
 	printMethods(f)
+
+	fmt.Println("\n>>> Checking methods for os.Process")
+	var proc *os.Process
+	printMethods(proc)
 }

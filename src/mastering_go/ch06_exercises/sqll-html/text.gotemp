@@ -1,0 +1,6 @@
++--------+--------+--------+
+|{{ printf "%8s" "Number" }}|{{ printf "%8s" "Double" }}|{{ printf "%8s" "Square" }}|
++--------+--------+--------+
+{{ range . }}|{{ printf "%8v" .Number }}|{{ printf "%8v" .Double }}|{{ printf "%8v" .Square }}|
++--------+--------+--------+
+{{ end }}

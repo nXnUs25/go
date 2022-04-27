@@ -8,6 +8,7 @@ func funReturnFun() func() int {
 	i := 0
 	return func() int {
 		i++
+		fmt.Printf(">> i:[%v] -> i * i:[%v]\n", i, i*i)
 		return i * i
 	}
 }
@@ -21,4 +22,5 @@ func main() {
 	fmt.Println("j1:", j())
 	fmt.Println("j2:", j())
 	fmt.Println("3:", i())
+	fmt.Println("j3:", j())
 }
