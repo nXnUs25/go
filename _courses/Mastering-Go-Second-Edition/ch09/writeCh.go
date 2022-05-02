@@ -7,9 +7,11 @@ import (
 
 func writeToChannel(c chan int, x int) {
 	fmt.Println(x)
-	c <- x
-	close(c)
 	fmt.Println(x)
+	c <- x
+	fmt.Println("No execution: ", x)
+	close(c)
+	fmt.Println("Same nothing <- blocks all code below", x)
 }
 
 func main() {

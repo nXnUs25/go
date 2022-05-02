@@ -13,16 +13,16 @@ func main() {
 	fmt.Printf("Going to create %d goroutines.\n", count)
 
 	var waitGroup sync.WaitGroup
-	fmt.Printf("%#v\n", waitGroup)
+	fmt.Printf("%#v : line 16 \n", waitGroup)
 	for i := 0; i < count; i++ {
 		waitGroup.Add(1)
 		go func(x int) {
 			defer waitGroup.Done()
-			fmt.Printf("%d ", x)
+			fmt.Printf("%d : line 21\n", x)
 		}(i)
 	}
 
-	fmt.Printf("%#v\n", waitGroup)
+	fmt.Printf("%#v : line 25 \n", waitGroup)
 	waitGroup.Wait()
 	fmt.Println("\nExiting...")
 }

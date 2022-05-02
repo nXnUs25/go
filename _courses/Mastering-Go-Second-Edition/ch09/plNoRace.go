@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"os"
-	"strconv"
+	//"os"
+	//"strconv"
 	"time"
 )
 
@@ -54,13 +54,16 @@ func third(in <-chan int) {
 }
 
 func main() {
-	if len(os.Args) != 3 {
-		fmt.Println("Need two integer parameters!")
-		return
-	}
+	//if len(os.Args) != 3 {
+	//	fmt.Println("Need two integer parameters!")
+	//	return
+	//}
 
-	n1, _ := strconv.Atoi(os.Args[1])
-	n2, _ := strconv.Atoi(os.Args[2])
+	//n1, _ := strconv.Atoi(os.Args[1])
+	//n2, _ := strconv.Atoi(os.Args[2])
+
+	n1 := 28
+	n2 := 100
 	if n1 > n2 {
 		fmt.Printf("%d should be smaller than %d.\n", n1, n2)
 		return

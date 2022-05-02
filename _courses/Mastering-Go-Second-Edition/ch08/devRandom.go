@@ -18,4 +18,7 @@ func main() {
 	var seed int64
 	binary.Read(f, binary.LittleEndian, &seed)
 	fmt.Println("Seed:", seed)
+
+	binary.Read(f, binary.BigEndian, &seed)
+	fmt.Println("Seed:", seed)
 }

@@ -14,8 +14,14 @@
 
 package main
 
-import "aliases/cmd"
+import (
+	"aliases/cmd"
+	"fmt"
+	"os"
+)
 
 func main() {
+	pwd, _ := os.Getwd()
+	fmt.Println(pwd)
 	cmd.Execute()
 }

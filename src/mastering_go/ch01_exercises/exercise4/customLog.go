@@ -38,6 +38,7 @@ func main() {
 	// LstdFlags = Ldate | Ltime
 	// initial values for the standard logger
 	iLog := log.New(w, "customLog ", log.LstdFlags)
+	//iLog.SetOutput(w)
 	iLog.Println("Hello there!")
 	iLog.Println("Another log entry!")
 }
