@@ -67,21 +67,21 @@ func (c *wc) getCharsCount() int {
 	return 0
 }
 
-func (c *wc) getWordsCount() int {
+func (c *wc) GetWordsCount() int {
 	if c != nil {
 		return c.words
 	}
 	return 0
 }
 
-func (c *wc) getLinesCount() int {
+func (c *wc) GetLinesCount() int {
 	if c != nil {
 		return c.lines
 	}
 	return 0
 }
 
-func (c *wc) getBytesCount() int {
+func (c *wc) GetBytesCount() int {
 	if c != nil {
 		return c.bytes
 	}
