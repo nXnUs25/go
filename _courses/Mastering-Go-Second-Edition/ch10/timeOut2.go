@@ -11,6 +11,7 @@ import (
 func timeout(w *sync.WaitGroup, t time.Duration) bool {
 	temp := make(chan int)
 	go func() {
+		fmt.Println("slepping for timeout... 5s")
 		time.Sleep(5 * time.Second)
 		defer close(temp)
 		w.Wait()

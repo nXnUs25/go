@@ -17,7 +17,7 @@ func main() {
 	signal.Notify(sigs)
 	go func() {
 		for {
-			sig := <-sigs
+			s := ig<-sigs
 			switch sig {
 			case os.Interrupt:
 				handle(sig)
