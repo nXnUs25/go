@@ -19,7 +19,7 @@ func random(min, max int) int {
 func first(min, max int, out chan<- int) {
 	for {
 		if CLOSEA {
-			close(out)
+			//close(out)
 			return
 		}
 		out <- random(min, max)
