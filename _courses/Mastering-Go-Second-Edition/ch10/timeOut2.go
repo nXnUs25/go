@@ -11,7 +11,7 @@ import (
 func timeout(w *sync.WaitGroup, t time.Duration) bool {
 	temp := make(chan int)
 	go func() {
-		fmt.Println("slepping for timeout... 5s")
+		fmt.Println("sleeping for timeout... 5s")
 		time.Sleep(5 * time.Second)
 		defer close(temp)
 		w.Wait()
@@ -27,6 +27,7 @@ func timeout(w *sync.WaitGroup, t time.Duration) bool {
 
 func main() {
 	arguments := os.Args
+	arguments = append(arguments, "10")
 	if len(arguments) != 2 {
 		fmt.Println("Need a time duration!")
 		return

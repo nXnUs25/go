@@ -33,6 +33,7 @@ func main() {
 	go C(z)
 	go B(y, z)
 	go C(z)
+	go C(y)
 
 	close(x)
 	time.Sleep(3 * time.Second)

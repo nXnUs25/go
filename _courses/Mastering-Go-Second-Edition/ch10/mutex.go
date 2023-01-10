@@ -31,6 +31,7 @@ func read() int {
 }
 
 func main() {
+	os.Args = append(os.Args, "21")
 	if len(os.Args) != 2 {
 		fmt.Println("Please give me an integer!")
 		return

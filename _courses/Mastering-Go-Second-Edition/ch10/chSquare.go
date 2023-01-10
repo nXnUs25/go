@@ -28,6 +28,7 @@ func f1(cc chan chan int, f chan bool) {
 
 func main() {
 	arguments := os.Args
+	arguments = append(arguments, "22")
 	if len(arguments) != 2 {
 		fmt.Println("Need just one integer argument!")
 		return

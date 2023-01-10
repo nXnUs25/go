@@ -25,7 +25,7 @@ func main() {
 	rand.Seed(time.Now().Unix())
 	createNumber := make(chan int)
 	end := make(chan bool)
-
+	os.Args = append(os.Args, "10") // to cheat command line input
 	if len(os.Args) != 2 {
 		fmt.Println("Please give me an integer!")
 		return

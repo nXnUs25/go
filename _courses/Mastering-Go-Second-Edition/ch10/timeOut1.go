@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+
+	duration := time.Duration(10000) * time.Millisecond
 	c1 := make(chan string)
 	go func() {
 		time.Sleep(time.Second * 3)
@@ -28,7 +30,7 @@ func main() {
 	select {
 	case res := <-c2:
 		fmt.Println(res)
-	case <-time.After(4 * time.Second):
+	case <-time.After(duration):
 		fmt.Println("timeout c2")
 	}
 }

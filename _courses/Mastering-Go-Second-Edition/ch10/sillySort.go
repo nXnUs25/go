@@ -10,7 +10,7 @@ import (
 
 func main() {
 	arguments := os.Args
-
+	arguments = append(arguments, []string{"10", "2", "5"}...)
 	if len(arguments) == 1 {
 		fmt.Println(os.Args[0], "n1, n2, [n]")
 		return
