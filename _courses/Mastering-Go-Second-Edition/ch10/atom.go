@@ -29,7 +29,8 @@ func main() {
 		go func(no int) {
 			defer waitGroup.Done()
 			for i := 0; i < Y; i++ {
-				// counter.val++
+				//counter.val++
+				//atomic.AddInt64(&counter.val, 1)
 				atomic.AddInt64(&counter.val, 1)
 			}
 		}(i)

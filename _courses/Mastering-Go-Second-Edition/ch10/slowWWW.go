@@ -27,6 +27,7 @@ func main() {
 
 	PORT := ":8001"
 	arguments := os.Args
+	arguments = append(arguments, "8080")
 	if len(arguments) == 1 {
 		fmt.Println("Using default port number: ", PORT)
 	} else {

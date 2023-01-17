@@ -9,11 +9,12 @@ import (
 
 func main() {
 	arguments := os.Args
+	arguments = append(arguments, "12")
 	if len(arguments) != 2 {
 		fmt.Println("Give me a natural number!")
 		return
 	}
-	numGR, err := strconv.Atoi(os.Args[1])
+	numGR, err := strconv.Atoi(arguments[1])
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -39,6 +39,7 @@ func showWithLock(c *secret) string {
 }
 
 func main() {
+	os.Args = append(os.Args, "2")
 	var showFunction = func(c *secret) string { return "" }
 	if len(os.Args) != 2 {
 		fmt.Println("Using sync.RWMutex!")

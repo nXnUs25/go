@@ -55,7 +55,7 @@ func create(n int) {
 func main() {
 	fmt.Println("Capacity of clients:", cap(clients))
 	fmt.Println("Capacity of data:", cap(data))
-
+	os.Args = append(os.Args, []string{"9", "21"}...)
 	if len(os.Args) != 3 {
 		fmt.Println("Need #jobs and #workers!")
 		return

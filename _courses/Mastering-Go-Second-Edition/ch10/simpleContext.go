@@ -70,6 +70,7 @@ func f3(t int) {
 }
 
 func main() {
+	os.Args = append(os.Args, "4")
 	if len(os.Args) != 2 {
 		fmt.Println("Need a delay!")
 		return

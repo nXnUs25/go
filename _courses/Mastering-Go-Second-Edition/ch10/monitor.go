@@ -33,6 +33,7 @@ func monitor() {
 }
 
 func main() {
+	os.Args = append(os.Args, "5")
 	if len(os.Args) != 2 {
 		fmt.Println("Please give an integer!")
 		return
@@ -54,6 +55,7 @@ func main() {
 			defer w.Done()
 			set(rand.Intn(10 * n))
 		}()
+		fmt.Printf("value: %d\n", read())
 	}
 	w.Wait()
 	fmt.Printf("\nLast value: %d\n", read())
